@@ -5,3 +5,8 @@ GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main scale.go
 rm -f kinesis_scaling.zip
 zip kinesis_scaling.zip main
 rm main
+
+GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o main scale.go
+rm -f kinesis_scaling.arm64.zip
+zip kinesis_scaling.arm64.zip main
+rm main
