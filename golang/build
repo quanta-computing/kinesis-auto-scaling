@@ -1,12 +1,12 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
-GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o main scale.go
-rm -f kinesis_scaling.zip
-zip kinesis_scaling.zip main
-rm main
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o bootstrap scale.go
+rm -f kinesis_scaling.x86_64.zip
+zip kinesis_scaling.x86_64.zip bootstrap
+rm bootstrap
 
-GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o main scale.go
+GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o bootstrap scale.go
 rm -f kinesis_scaling.arm64.zip
-zip kinesis_scaling.arm64.zip main
-rm main
+zip kinesis_scaling.arm64.zip bootstrap
+rm bootstrap
